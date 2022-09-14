@@ -1,0 +1,2 @@
+# class insert():
+#     def insertDataPrices():
