@@ -31,6 +31,12 @@ def createTableSector():
     object=createTables()
     object.SymbolByEconomicSectorTable()
 
+
+# ok
+def SymbolfromYahoo():
+    object=createTables()
+    object.SymbolfromYahoo()
+
 # ok
 def insertDataPerIndustry():
     object=insert()
@@ -43,6 +49,11 @@ def insertDataTickers():
     object=insert()
     object.insertDataTickers()
 
+# ok
+def insertDataSymbolDetails():
+    object=insert()
+    object.insertDataSymbolDetails()
+
 
 # ok
 def deleteDataPerIndustry():
@@ -54,4 +65,9 @@ def deleteDataTickers():
     object=delete()
     object.deleteDataTickers()
 
-getDatafromYahoo()
+
+def deleteDataTickerDetails():
+    object=delete()
+    object.deleteDataTickerDetails()
+
+deleteDataTickerDetails()

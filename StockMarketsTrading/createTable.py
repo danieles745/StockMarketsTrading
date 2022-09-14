@@ -40,4 +40,24 @@ class createTables():
                 },
             ],
             BillingMode='PAY_PER_REQUEST',
+        )     
+
+    def SymbolfromYahoo(self):
+
+        client = boto3.client('dynamodb')
+        response = client.create_table(
+            AttributeDefinitions=[
+                {
+                    'AttributeName': 'symbol',
+                    'AttributeType': 'S'
+                },
+            ],
+            TableName='TickersDetails',
+            KeySchema=[
+                {
+                    'AttributeName': 'symbol',
+                    'KeyType': 'HASH'
+                },
+            ],
+            BillingMode='PAY_PER_REQUEST',
         )        

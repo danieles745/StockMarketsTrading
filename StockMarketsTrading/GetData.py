@@ -28,7 +28,6 @@ class download():
         list_symbols=ss.get_symbol_list(market="US")
         df=pd.DataFrame(list_symbols)
         jsonOut=df.to_json("listado_de_tickers.json")
-        jsonOut
     
     def downloadDataFromYahoo():
         configData=jsonOperations.loadJson("./config/config.json")
