@@ -1,5 +1,7 @@
 {
     "Symbol":["AAPL","A"],
     "Period":"1y",
-    "Interval":"1d"
+    "Interval":"1d",
+    "AccessKeyID":"AKIA27HVS6FE57FRSGXZ",
+    "SecretAccessKey":"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"
 }

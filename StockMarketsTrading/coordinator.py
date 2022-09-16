@@ -3,6 +3,7 @@ import jsonOperations
 from GetData import download
 from insertData import insert
 from delete import delete
+from generate import generateClass
 # This method will get symbols per economic sector and will host them in json file
 # 
 # ok
@@ -13,7 +14,7 @@ def getSymbolsbyIndustry():
 def getSymbolsfromYahoo():
     object=download
     object.SymbolfromYahoo()
-# ok
+# ok 
 def getDatafromYahoo():
     object=download
     object.downloadDataFromYahoo()
@@ -70,4 +71,8 @@ def deleteDataTickerDetails():
     object=delete()
     object.deleteDataTickerDetails()
 
-deleteDataTickerDetails()
+def generateCSV():
+    object=generateClass()
+    object.generateCSV()
+
+generateCSV()
