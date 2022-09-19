@@ -100,6 +100,7 @@ def deleteTables():
 
 
 
+
 if __name__=='__main__':
     deleteTables()
 
