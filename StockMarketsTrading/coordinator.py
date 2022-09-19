@@ -99,6 +99,7 @@ def deleteTables():
 #     insertData()
 
 
+
 if __name__=='__main__':
     deleteTables()
 
