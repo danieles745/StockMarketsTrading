@@ -22,7 +22,7 @@
 // Stock Prices
 
 {
-    "nameTable": "AAPL",
+    "nameTable": "ticker",
 }
 
 
@@ -30,7 +30,7 @@
 // Stock Prices
 
 {
-    "nameTable": "AAPL",
+    "nameTable": "ticker",
     "fechaIni": "2021-09-15",
     "fechaFin": "2021-09-16"    
 }
