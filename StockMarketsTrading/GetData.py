@@ -1,14 +1,15 @@
 import pandas as pd
 import yfinance as yf
 from stocksymbol import StockSymbol
+from generate import generateClass
 import jsonOperations
-import json
+
 
 
 class download():
     
     def SymbolperIndustry():
-        data=pd.read_excel("listado_de_empresas.xlsx")
+        data=pd.read_excel("./generatedFiles/listado_de_empresas.xlsx")
         df=pd.DataFrame(data)
         # we define the keys
         Symbol=df['Symbol']
@@ -28,20 +29,23 @@ class download():
         list_symbols=ss.get_symbol_list(market="US")
         df=pd.DataFrame(list_symbols)
         jsonOut=df.to_json("listado_de_tickers.json")
-        jsonOut
     
     def downloadDataFromYahoo():
         configData=jsonOperations.loadJson("./config/config.json")
         Symbol=configData["Symbol"]
+        count=len(Symbol)
         Period=configData["Period"]
         Interval=configData["Interval"]
         data=yf.download(Symbol,period=Period,interval=Interval)
-        data_after=data.reset_index()
+        objcsv=generateClass()
+        objcsv.generateCSV(data)
+        data_after=data.reset_index()      
         dict={}
         a=0
+        list=[]
         for i in data_after:
             sub_dict={}
-            if a%2!=0:
+            if a%count==1:
                 list=[]
             if a>0:
                 sub_dict[i[1]]=data_after[i]
@@ -53,23 +57,6 @@ class download():
                 dict[i[0]]=data_after[i]
             a+=1
         dict["Date"]=dict["Date"].astype(str)
-        print(dict)
         df=pd.DataFrame.from_dict(dict.items())
         jsonOut=df.to_json("tablas.json")
-        # data_dict=json.dumps(dict)
-        # jsonOut=data_dict.to_json("tablas.json")
-        # 
-        # for i in Symbol:
-        #     ticker=yf.Ticker(i)
-        #     df=ticker.history(period=Period,interval=Interval)
-        #     Open=df["Date"]
-        #     print(Open)
-            # values=df.to_dict()
-            # # print(values)
-            # dict[i]=values
-            
-            # data=json.dumps(dict)
-            # print(data)
-        # data=pd.DataFrame(columns=["Symbol","Data"])
-        # jsonOut=data.to_json("tablas.json")
 

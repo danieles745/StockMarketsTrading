@@ -17,3 +17,9 @@ class delete():
             response = client.delete_table(
                 TableName="table_with_symbol_{}".format(i)
         )                
+
+    def deleteDataTickerDetails(self):
+        client = boto3.client('dynamodb')
+        response = client.delete_table(
+            TableName='TickersDetails'
+        )    

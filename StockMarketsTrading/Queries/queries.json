@@ -1,0 +1,36 @@
+// Available Tickers Details
+
+
+{
+    "symbols": "symbol",
+    "ShortNames": "ShortName",
+    "LongNames": "LongName",
+    "Exchanges": "Exchange",
+    "Markets": "Market",
+    "QuoteTypes": "QuoteType"
+}
+
+
+// Available Tickers Per Industry
+
+
+{
+    "NameStock": "NameTick",
+    "Industry": "EconomicSector"
+}
+
+// Stock Prices
+
+{
+    "nameTable": "ticker",
+}
+
+
+
+// Stock Prices
+
+{
+    "nameTable": "ticker",
+    "fechaIni": "2021-09-15",
+    "fechaFin": "2021-09-16"    
+}

@@ -23,13 +23,16 @@ class insert():
             if a==4:
                 break
             a+=1
+
+
     def insertDataTickers(self):
         client = boto3.client('dynamodb')
         configFile=jsonOperations.loadJson("tablas.json")
         jsonFile=jsonOperations.loadJson("./config/config.json")
-        Symbol=jsonFile["Symbol"]        
+        Symbol=jsonFile["Symbol"]
+        count=len(Symbol)        
         for i in Symbol:
-            for e in range(2):
+            for e in range(count):
                 for p in range(4):
                     di=list(configFile["1"]["1"][e])[0]
 
@@ -61,3 +64,30 @@ class insert():
                         },  
                     )
 
+    def insertDataSymbolDetails(self):
+        client = boto3.client('dynamodb')
+        configFile=jsonOperations.loadJson("listado_de_tickers.json")
+        for i in range(4):
+            response = client.put_item(
+                TableName='TickersDetails',
+                Item={
+                    'symbol': {
+                        'S': configFile["symbol"][str(i)],
+                    },
+                    'ShortName': {
+                        'S': configFile["shortName"][str(i)],
+                    },  
+                    'LongName': {
+                        'S': configFile["longName"][str(i)],
+                    },
+                    'Exchange': {
+                        'S': configFile["exchange"][str(i)],
+                    }, 
+                    'Market': {
+                        'S': configFile["market"][str(i)],
+                    },
+                    'QuoteType': {
+                        'S': configFile["quoteType"][str(i)],
+                    }                                                            
+                },  
+            )

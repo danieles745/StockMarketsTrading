@@ -3,6 +3,7 @@ import jsonOperations
 from GetData import download
 from insertData import insert
 from delete import delete
+from generate import generateClass
 # This method will get symbols per economic sector and will host them in json file
 # 
 # ok
@@ -13,7 +14,7 @@ def getSymbolsbyIndustry():
 def getSymbolsfromYahoo():
     object=download
     object.SymbolfromYahoo()
-# ok
+# ok 
 def getDatafromYahoo():
     object=download
     object.downloadDataFromYahoo()
@@ -31,6 +32,12 @@ def createTableSector():
     object=createTables()
     object.SymbolByEconomicSectorTable()
 
+
+# ok
+def SymbolfromYahoo():
+    object=createTables()
+    object.SymbolfromYahoo()
+
 # ok
 def insertDataPerIndustry():
     object=insert()
@@ -43,6 +50,11 @@ def insertDataTickers():
     object=insert()
     object.insertDataTickers()
 
+# ok
+def insertDataSymbolDetails():
+    object=insert()
+    object.insertDataSymbolDetails()
+
 
 # ok
 def deleteDataPerIndustry():
@@ -54,4 +66,28 @@ def deleteDataTickers():
     object=delete()
     object.deleteDataTickers()
 
-getDatafromYahoo()
+
+def deleteDataTickerDetails():
+    object=delete()
+    object.deleteDataTickerDetails()
+
+
+# getSymbolsbyIndustry()
+# getSymbolsfromYahoo()
+# getDatafromYahoo()
+# createTableAws()
+# createTableSector()
+# SymbolfromYahoo()
+
+def insertData():
+    insertDataPerIndustry()
+    insertDataTickers()
+    insertDataSymbolDetails()
+
+def deleteTables():
+    deleteDataPerIndustry()
+    deleteDataTickers()
+    deleteDataTickerDetails()
+
+# deleteTables()
+# insertData()
