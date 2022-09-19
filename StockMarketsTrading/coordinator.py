@@ -71,8 +71,23 @@ def deleteDataTickerDetails():
     object=delete()
     object.deleteDataTickerDetails()
 
-def generateCSV():
-    object=generateClass()
-    object.generateCSV()
 
-generateCSV()
+# getSymbolsbyIndustry()
+# getSymbolsfromYahoo()
+# getDatafromYahoo()
+# createTableAws()
+# createTableSector()
+# SymbolfromYahoo()
+
+def insertData():
+    insertDataPerIndustry()
+    insertDataTickers()
+    insertDataSymbolDetails()
+
+def deleteTables():
+    deleteDataPerIndustry()
+    deleteDataTickers()
+    deleteDataTickerDetails()
+
+# deleteTables()
+# insertData()

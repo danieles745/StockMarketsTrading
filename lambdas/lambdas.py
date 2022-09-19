@@ -18,4 +18,3 @@ def datacollect(table):
     )
     return response
 
-lambda_handler("{\r\n    \"nameTable\": \"AAPL\",\r\n}\r\n")

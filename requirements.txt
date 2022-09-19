@@ -1,0 +1,4 @@
+boto3==1.24.72
+pandas==1.4.4
+stocksymbol==0.0.5
+yfinance==0.1.74

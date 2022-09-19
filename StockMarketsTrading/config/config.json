@@ -1,7 +1,8 @@
 {
-    "Symbol":["AAPL","A"],
+    "Symbol":["BNR","BOB","BOCH"],
     "Period":"1y",
     "Interval":"1d",
     "AccessKeyID":"AKIA27HVS6FE57FRSGXZ",
-    "SecretAccessKey":"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"
+    "SecretAccessKey":"tSxRQ3J96D1csKkNQ38JzIWoMj9LQmZbrahBJdjW",
+    "region": "us-east-1"
 }

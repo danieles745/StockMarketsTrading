@@ -29,9 +29,10 @@ class insert():
         client = boto3.client('dynamodb')
         configFile=jsonOperations.loadJson("tablas.json")
         jsonFile=jsonOperations.loadJson("./config/config.json")
-        Symbol=jsonFile["Symbol"]        
+        Symbol=jsonFile["Symbol"]
+        count=len(Symbol)        
         for i in Symbol:
-            for e in range(2):
+            for e in range(count):
                 for p in range(4):
                     di=list(configFile["1"]["1"][e])[0]
 
